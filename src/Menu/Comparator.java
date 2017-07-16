@@ -1,7 +1,9 @@
 package Menu;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.ParseException;
+import java.util.List;
 
 import com.opencsv.CSVReader;
 
@@ -9,10 +11,24 @@ import AskForPrice.Kolonial;
 import AskForPrice.Kosik;
 import AskForPrice.Rohlik;
 import AskForPrice.Tesco;
+import DB.Connector;
+import Item.Item;
 
 public class Comparator {
 
 	public static void main(String[] args) {
+		
+		
+		
+		try {
+			List<Item> items = Connector.selectAllRecordsFromItemTable();
+			for(Item item : items){
+				System.out.println(item.toString());
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		
 		// PRINT HEAD

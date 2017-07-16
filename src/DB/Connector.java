@@ -10,7 +10,7 @@ import java.util.List;
 
 import Item.Item;
 
-public class DB {
+public class Connector {
 
 	private static final String DB_DRIVER = "com.mysql.jdbc.Driver";
 	private static final String DB_CONNECTION = "jdbc:mysql://localhost:3306/online_food_shop_comparator";
