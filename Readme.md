@@ -1,3 +1,6 @@
+## Instalation ##
++ Under [MySQL](http://localhost.org/phpmyadmin/) create online_food_shop_comparator database. 
+
 ### Ideas ###
 + Select items based on csv list
 + Add category to the item
@@ -12,3 +15,4 @@
 + Create DB scheme
 + Item DAO
 + Create local Git and publish project as open-source at GitHub
+
