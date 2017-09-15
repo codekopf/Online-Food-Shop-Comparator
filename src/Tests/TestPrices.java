@@ -8,18 +8,11 @@ import java.text.ParseException;
 import org.junit.Before;
 import org.junit.Test;
 
-import AskForPrice.Kolonial;
 import AskForPrice.Kosik;
 import AskForPrice.Rohlik;
 import AskForPrice.Tesco;
 
 public class TestPrices {
-	
-	@Test
-	public void testAssertItemPriceKolonial() throws IOException, ParseException {
-		double testKolonial = Kolonial.priceRetriever("https://www.kolonial.cz/pecivo-cerstve-bile/rohlik-jemny-43g");
-		assertEquals(1.9, testKolonial, 0.1);
-	}
 
 	@Test
 	public void testAssertItemPriceKosik() throws IOException, ParseException {
@@ -30,7 +23,7 @@ public class TestPrices {
 	@Test
 	public void testAssertItemPriceRohlik() throws IOException, ParseException {
 		double testRohlik = Rohlik.priceRetriever("https://www.rohlik.cz/1286399-rohlik-jemny");
-		assertEquals(1.9, testRohlik, 0.1);
+		assertEquals("Text: ",1.9, testRohlik, 0.1);
 	}
 	
 	@Test

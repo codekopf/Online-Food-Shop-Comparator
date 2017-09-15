@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.opencsv.CSVReader;
 
-import AskForPrice.Kolonial;
 import AskForPrice.Kosik;
 import AskForPrice.Rohlik;
 import AskForPrice.Tesco;
@@ -33,13 +32,12 @@ public class Comparator {
 		
 		// PRINT HEAD
 		StringBuilder sb = new StringBuilder();
-		sb.append("+--------------------+--------------------+--------------------+--------------------+--------------------+\n");
-		sb.append("|                    |     kolonial.cz    |      kosik.cz      |      rohlik.cz     |      itesco.cz     |\n");
-		sb.append("+--------------------+--------------------+--------------------+--------------------+--------------------+");
+		sb.append("+--------------------+--------------------+--------------------+--------------------+\n");
+		sb.append("|                    |      kosik.cz      |      rohlik.cz     |      itesco.cz     |\n");
+		sb.append("+--------------------+--------------------+--------------------+--------------------+");
 	    
 		System.out.println(sb);
 		
-		double totalKolonial = 0;
 		double totalKosik = 0;
 		double totalRohlik = 0;
 		double totalTesco = 0;
@@ -51,36 +49,29 @@ public class Comparator {
 	        	System.out.print("|");
 	        	System.out.printf("%-20s",  line[0]);
 	        	System.out.print("|");
-	        	
-	        	// Kolonial
-	    		double itemPriceKolonial = Kolonial.priceRetriever(line[2]);
-	    		totalKolonial += itemPriceKolonial;
-	    		System.out.printf(" %-19s",  itemPriceKolonial);
-	    		
-	        	System.out.print("|");
-	        	
+	        	        	
 	        	// Kosik
-	        	double itemPriceKosik = Kosik.priceRetriever(line[3]);
+	        	double itemPriceKosik = Kosik.priceRetriever(line[2]);
 	        	totalKosik += itemPriceKosik;
 	        	System.out.printf(" %-19s",  itemPriceKosik);
 	        	
 	        	System.out.print("|");
 	        	
 	        	// Rohlik
-	        	double itemPriceRohlik = Rohlik.priceRetriever(line[4]);
+	        	double itemPriceRohlik = Rohlik.priceRetriever(line[3]);
 	        	totalRohlik += itemPriceRohlik;
 	        	System.out.printf(" %-19s",  itemPriceRohlik);
 	        	
 	        	System.out.print("|");
 	        	
 	        	// Tesco
-	        	double itemPriceTesco = Tesco.priceRetriever(line[5]);
+	        	double itemPriceTesco = Tesco.priceRetriever(line[4]);
 	        	totalTesco += itemPriceTesco;
 	        	System.out.printf(" %-19s",  itemPriceTesco);
 	        	
 	        	System.out.print("|\n");
-	        	System.out.print("+--------------------+--------------------+--------------------+--------------------+--------------------+\n");
-	    		// System.out.print("Item [name= " + line[0] + ", quantity= " + line[1] + " ,\n kolonial.cz=" + line[2] + " "  + " ,\n kosik.cz=" + line[3] + " "  + " ,\n rohlik.cz=" + line[4] + " "  + " ,\n itesco.cz=" + line[5] + "]\n");
+	        	System.out.print("+--------------------+--------------------+--------------------+--------------------+\n");
+	    		// System.out.print("Item [name= " + line[0] + ", quantity= " + line[1] + " ,\n kosik.cz=" + line[2] + " "  + " ,\n rohlik.cz=" + line[3] + " "  + " ,\n itesco.cz=" + line[4] + "]\n");
 	        }
 	    } catch (IOException | ParseException e) {
 	        e.printStackTrace();
@@ -88,7 +79,7 @@ public class Comparator {
         
         // PRINT COUNT
         DecimalFormat df = new DecimalFormat("#.##");
-		System.out.printf("| TOTAL              | %-19s| %-19s| %-19s| %-19s|\n",  df.format(totalKolonial), df.format(totalKosik), df.format(totalRohlik), df.format(totalTesco));
+		System.out.printf("| TOTAL              | %-19s| %-19s| %-19s|\n", df.format(totalKosik), df.format(totalRohlik), df.format(totalTesco));
 		System.out.println("+--------------------+--------------------+--------------------+--------------------+--------------------+");
         
 	}

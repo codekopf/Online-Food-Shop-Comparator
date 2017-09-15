@@ -32,7 +32,7 @@ public class Kosik {
 		    Number number = format.parse(price);
 		    double doublePrice = number.doubleValue();
 		    
-		 // System.out.println(doublePrice);
+		   // System.out.println(doublePrice);
 			return doublePrice;
 		} finally {
 			// System.out.println(url);
